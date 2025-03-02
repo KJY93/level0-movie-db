@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Level 0 MovieDB</title>
+    <base href="/" />
+    <link rel="stylesheet" href="assets/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <div id="container">
+        <nav>
+            <ul id="nav-links">
+                <li>
+                    <a href="" onclick="navigateTo(null, '/')"><i class="fa-solid fa-house"></i></a>
+                </li>
+            </ul>
+        </nav>
+        <div id="content">
+        </div>
+
+        <footer>
+            <div>
+                <a href="https://github.com/KJY93" target="_blank"><i class="fa-brands fa-github-alt fa-2x"></i></a>
+            </div>
+            <div>
+                <a href="https://www.themoviedb.org/" target="_blank">TMDB</a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="./ui/ui.js"></script>
+    <script src="./routes/routes.js" type="module"></script>
+    <script src="./templates/homepage.js" type="module"></script>
+    <script src="./templates/moviedetails.js" type="module" defer></script>
+</body>
+
+</html>

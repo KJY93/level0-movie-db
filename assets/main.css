@@ -1,0 +1,304 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+
+#container {
+    display: grid;  
+    height: 100%;
+}
+
+#content {
+    overflow: hidden;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    background-color: #5C3D00;
+    width: 100%;
+}
+
+#nav-links {
+    padding: 0; /* to remove the padding added by user-agent */
+}
+
+#nav-links li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 10px;
+    font-size: 20px;
+}
+
+li a, li i {
+    color: white;
+}
+
+li a {
+    text-decoration: none;
+}
+
+#dropdown li {
+    display: none;
+}
+
+#dropdown {
+    margin-left: auto;
+}
+
+#dropdown-menu {
+    position: fixed;
+    background-color: #D4A017;
+    list-style-type: none;
+    padding: 10px;
+    width: 100%;
+    transform: translateX(100%);
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    opacity: 0; 
+    margin-top: 65px;
+}   
+
+#dropdown-menu li {
+    padding: 10px;
+    list-style-type: none;
+    text-align: left;
+}
+
+#dropdown-menu ul {
+    padding: 0;
+}
+
+#dropdown-menu.show {
+    transform: translateX(0);
+    opacity: 1;         
+    transition-delay: 0ms;
+}
+
+#intro {
+    background-image: url('mortalkombat.jpg');
+    width: 100%; 
+    height: 300px;
+    background-size: cover;
+    background-position: -200px -200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 30px;
+}
+
+.trending-carousel-track, .popular-carousel-track {
+    display: flex;
+    gap: 15px;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-color: transparent transparent; 
+    height: 310px;
+    margin-left: 10px;
+    margin-right: 10px;
+}   
+
+.trending-carousel-track-item img, .popular-carousel-track-item img  {
+    border-radius: 7px;
+    width: 150px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 10px; 
+    margin-right: 10px;
+}
+
+.pillbox-background {
+    border-style: solid;
+    border-color: #5C3D00;
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+.active, #trending.active, #popular.active {
+    background-color: darkgoldenrod;
+    color: white;
+}
+
+.pillbox-background-container {
+    display: flex;
+}
+
+.trending-carousel-track-item, .popular-carousel-track-item {
+    scroll-snap-align: center;
+    scroll-padding: 50%;
+    position: relative;
+    height: 240px;
+}
+
+.percent {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    background-color: black;
+    color: white;
+    bottom: 35px;
+    left: -20px;
+    border-radius: 50%;
+    transform: translate(70%, 60%); 
+    border-style: solid;
+    border-width: medium;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.percent.low {
+    border-color: red;
+}
+
+/* Medium rating (50-75%) */
+.percent.medium {
+    border-color: orange;
+}
+
+/* High rating (76-100%) */
+.percent.high {
+    border-color: green;
+}
+
+.metadata {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.boldTitle {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.boldTitle a {
+    text-decoration: none;
+    color: black;
+}
+
+.fontColor {
+    color: #606060
+}
+
+footer {
+    height: 100px;
+    background-color: #5C3D00;
+    display: flex;
+    gap: 10px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}   
+
+#movie, #tv {
+    height: 300px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+#movie::after, #tv::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(139, 69, 19, 0.3);
+}
+
+#movie img, #tv img {
+    border-radius: 10px;
+    height: 90%;
+}
+
+#movie-details-section, #tv-details-section {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.movie-details-section-item h4, .tv-details-section-item h4 {
+    margin-bottom: 5px;
+}
+
+.movie-details-section-item p, .tv-details-section-item p  {
+    margin-bottom: 5px;
+    margin-top: 0px;
+}
+
+.not-found-img {
+    background-image: url('404.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+footer > div > a:visited {
+    color: inherit;
+}
+
+footer > div > a {
+    text-decoration: none;
+}
+
+#github-icon {
+    width: 50px;
+    height: 50px;
+}
+
+
+@media only screen and (max-width: 500px) {
+    #nav-links a {
+        font-size: 16px;
+    }
+
+    .not-found-img {
+        background-image: url('404p.jpg');
+    }
+    
+
+    #intro {
+        background-image: url('daredevil.jpg');
+        background-position: center center;
+        flex-direction: column;
+    }
+
+    #intro h2 {
+        font-size: 1.5rem;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    #intro h3 {
+        font-size: 1.2rem;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .trending-carousel-track-item, .popular-carousel-track-item  {
+        width: 180px;
+    }
+}
